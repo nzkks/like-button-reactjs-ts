@@ -1,6 +1,6 @@
-# App Name
+# Like button using React and Typescript
 
-App Details
+Like button using React and Typescript
 
 ---
 

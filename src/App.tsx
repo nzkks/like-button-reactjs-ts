@@ -3,7 +3,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <h3>App Name</h3>
+      <h3>Like button using React and Typescript</h3>
     </>
   );
 };
