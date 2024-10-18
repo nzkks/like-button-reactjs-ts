@@ -10,7 +10,7 @@ const LikeButton = () => {
   };
 
   return (
-    <button onClick={handleClick} className="likeBtn">
+    <button onClick={handleClick} className={`${Liked ? 'liked' : ''} likeBtn`}>
       <HeartIcon /> {Liked ? 'Liked' : 'Like'}
     </button>
   );
