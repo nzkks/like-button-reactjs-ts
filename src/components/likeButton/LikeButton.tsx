@@ -36,7 +36,7 @@ const LikeButton = () => {
 
   return (
     <>
-      <button onClick={handleClick} className={`${Liked ? 'liked' : ''} likeBtn`}>
+      <button onClick={handleClick} disabled={isFetching} className={`${Liked ? 'liked' : ''} likeBtn`}>
         {isFetching ? <SpinnerIcon /> : <HeartIcon />} {Liked ? 'Liked' : 'Like'}
       </button>
 
