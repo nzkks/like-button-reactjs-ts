@@ -1,5 +1,5 @@
 export { default as LikeButton } from './likeButton/LikeButton';
 export * from './likeButton';
 
-export { HeartIcon } from './icons';
+export { HeartIcon, SpinnerIcon } from './icons';
 export * from './icons';

@@ -41,3 +41,7 @@
 .likeBtn-icon {
   display: flex;
 }
+
+.error {
+  color: red;
+}

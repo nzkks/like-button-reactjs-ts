@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { HeartIcon } from '../icons';
+import { HeartIcon, SpinnerIcon } from '../icons';
 
 const LikeButton = () => {
   const [Liked, setLiked] = useState(false);
@@ -22,18 +22,26 @@ const LikeButton = () => {
         }),
       });
 
-      console.log(await response.json());
+      if (response.status >= 200 && response.status < 300) {
+        setLiked(!Liked);
+      } else {
+        const res = await response.json();
+        setError(res.message);
+        return;
+      }
     } finally {
       setIsFetching(false);
     }
-
-    setLiked(!Liked);
   };
 
   return (
-    <button onClick={handleClick} className={`${Liked ? 'liked' : ''} likeBtn`}>
-      <HeartIcon /> {Liked ? 'Liked' : 'Like'}
-    </button>
+    <>
+      <button onClick={handleClick} className={`${Liked ? 'liked' : ''} likeBtn`}>
+        {isFetching ? <SpinnerIcon /> : <HeartIcon />} {Liked ? 'Liked' : 'Like'}
+      </button>
+
+      {error && <p className="error">{error}</p>}
+    </>
   );
 };
 

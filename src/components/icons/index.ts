@@ -1,1 +1,1 @@
-export { HeartIcon } from './Icons';
+export { HeartIcon, SpinnerIcon } from './Icons';
